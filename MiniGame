@@ -1,0 +1,49 @@
+  int numero, comp;
+  char resposta = 's';
+  comp = rand() % 3;
+
+  while (resposta == 's' || resposta == 'S') {
+
+    printf("Escolha um número: 0 (Pedra), 1 (Papel), 2 (Tesoura)\n");
+    scanf("%d",&numero);
+
+    switch (numero)
+    {
+      case 0: printf ("\nVocê escolheu pedra\n"); break;
+      case 1: printf ("\nVocê escolheu papel\n"); break;
+      case 2: printf ("\nVocê escolheu tesoura\n"); break;
+    }
+
+    while (numero<0 || numero>2)
+    {
+      printf ("Opção inválida, escolha um número: ");
+      scanf ("%d",&numero);  
+    }
+
+    printf("\nVez do computador....\n");
+
+    if (comp == 0) printf("\nO computador escolheu pedra\n");
+      else if (comp == 1) printf("\nO computador escolheu papel\n");
+    else printf("\nO computador escolheu tesoura\n");
+
+    if (numero == 1 && comp == 0) printf("\nJogador ganhou\n");
+      else if (numero == 0 && comp == 1 ) printf("\nComputador ganhou\n");
+        else if (numero == 2 && comp == 1 ) printf("\nJogador ganhou\n");
+          else if (numero == 1 && comp == 2 ) printf("\nComputador ganhou\n");
+            else if (numero == 0 && comp == 2 ) printf("\nJogador ganhou\n");
+              else if (numero == 2 && comp == 0 ) printf("\nComputador ganhou\n");
+    else printf("\nEmpate! Ninguém ganhou\n");
+
+    printf("\nQuem ganha de quem?\n");
+    printf("\nO papel ganha da pedra porque a embrulha.\n  \nA tesoura ganha do papel porque o corta.\n  \nA pedra ganha da tesoura porque a quebra.\n");
+
+    printf("\nVamos jogar novamente? <S/N> \n");
+    scanf("%s",&resposta);
+
+    if (resposta == 's' || resposta == 'S')
+      printf("\nReiniciando jogo..\n");
+    else printf("Jogo encerrado");
+  }
+
+  return 0;
+}
